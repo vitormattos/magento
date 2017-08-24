@@ -19,10 +19,9 @@
     </fieldsets>
      
     <helpers>
-            <mundipagg>
-                <class>Mundipagg_Helper</class>
-            </mundipagg>
-            
+        <mundipagg>
+            <class>Mundipagg_Helper</class>
+        </mundipagg>
     </helpers>
  
     <blocks>
