@@ -1,0 +1,22 @@
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <mundipagg translate="title" module="mundipagg">
+                                        <title>Mundipagg</title>
+                                        <sort_order>999</sort_order>
+                                    </mundipagg>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
