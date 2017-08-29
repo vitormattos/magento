@@ -10,10 +10,26 @@
                 <class>Mundipagg_Model</class>
             </mundipagg>
         </models>
+        
         <helpers>
             <mundipagg>
                 <class>Mundipagg_Helper</class>
             </mundipagg>
         </helpers>
+        
+        <blocks>
+            <mundipagg>
+                <class>Mundipagg_Block</class>
+            </mundipagg>
+        </blocks>
     </global>
+    <default>
+        <mundipagg>
+            <general_group>
+                <moduleStatus>1</moduleStatus>
+                <logs>1</logs>
+                <testMode>1</testMode>
+            </general_group>
+        </mundipagg>
+    </default>
 </config>

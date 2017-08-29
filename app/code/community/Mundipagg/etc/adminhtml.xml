@@ -7,9 +7,9 @@
                         <children>
                             <config>
                                 <children>
-                                    <mundipagg translate="title" module="mundipagg">
+                                    <mundipagg translate="title" module="Mundipagg">
                                         <title>Mundipagg</title>
-                                        <sort_order>999</sort_order>
+                                        <sort_order>666</sort_order>
                                     </mundipagg>
                                 </children>
                             </config>
