@@ -10,21 +10,29 @@
         <payment>
             <groups>
                 <mundipagg translate="label" module="mundipagg">
-                    <label>Mundipagg</label>
+                    <label>Mundipagg - Payment methods</label>
                     <sort_order>1000</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>0</show_in_store>
-                    <fields>
-                        <title translate="label">
-                            <label>Title</label>
-                            <frontend_type>text</frontend_type>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>0</show_in_store>
-                            <sort_order>1</sort_order>
-                        </title>
-                    </fields>
+                    <comment>
+                        <![CDATA[
+                            <a href="http://www.mundipagg.com.br" target="_blank"><img title="MundiPagg" alt="MundiPagg" width="100" src="https://www.mundipagg.com/wp-content/uploads/2017/05/logo-mundipagg.png"/></a>
+                            <br>
+                            <br>
+                            <br>
+                            <h3>Allowed payment methods</h3>
+                            <ul>
+                                <li>- Credit card</li>
+                                <li>- Boleto</li>
+                            </ul>
+                            <br>
+                            <br>
+                            <h3><a href="index.php/admin/system_config/edit/section/mundipagg/">Mundipagg module configuration page</a></h3>
+                        ]]>
+                        
+                    </comment>
+                    
                 </mundipagg>
             </groups>
         </payment>
@@ -38,7 +46,7 @@
             
             <groups>
                 <general_group translate="label" module="mundipagg">
-                    <label><![CDATA[<img title="Creditcard" alt="Creditcard" width='32' style='margin:10px 0px 0px 0px;' src="/skin/adminhtml/default/default/images/mundipagg/icons/mundipagg-branco.png"/> <div style='margin: -23px 0 13px 40px;'> General configuration</div>]]></label>
+                    <label><![CDATA[<img title="Mundipagg" alt="Mundipagg" width='32' style='margin:10px 0px 0px 0px;' src="/skin/adminhtml/default/default/images/mundipagg/icons/mundipagg-branco.png"/> <div style='margin: -23px 0 13px 40px;'> General configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1000</sort_order>
                     <show_in_default>1</show_in_default>
@@ -158,6 +166,9 @@
                             <label>Payment title</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -166,6 +177,9 @@
                             <label>Name</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -175,6 +189,9 @@
                             <frontend_type>select</frontend_type>
                             <source_model>Mundipagg_Model_BankCodes</source_model>
                             <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -183,6 +200,9 @@
                             <label>Due at</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -191,6 +211,9 @@
                             <label>Instructions</label>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>1</sort_order>
+                            <depends>
+                                <boleto_status>1</boleto_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -227,6 +250,9 @@
                             <label>Payment title</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -235,6 +261,9 @@
                             <label>Invoice's name</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
@@ -245,6 +274,9 @@
                             <source_model>Mundipagg_Model_CreditCardOperationType</source_model>
                             <comment>Select operation type</comment>
                             <sort_order>4</sort_order>
+                            <depends>
+                                <cards_config_status>1</cards_config_status>
+                            </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>                
