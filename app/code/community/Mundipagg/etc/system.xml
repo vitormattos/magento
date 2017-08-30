@@ -241,7 +241,9 @@
                         </invoice_name>
                         <operation_type translate="label">
                             <label>Operation type</label>
-                            <frontend_type>text</frontend_type>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Mundipagg_Model_CreditCardOperationType</source_model>
+                            <comment>Select operation type</comment>
                             <sort_order>4</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -357,6 +359,7 @@
                             <sort_order>8</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <visa_status>1</visa_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -369,6 +372,7 @@
                             <sort_order>8</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <visa_status>1</visa_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -380,6 +384,7 @@
                             <sort_order>9</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <visa_status>1</visa_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -417,6 +422,7 @@
                             <sort_order>22</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -429,6 +435,7 @@
                             <sort_order>23</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -440,6 +447,7 @@
                             <sort_order>25</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <mastercard_status>1</mastercard_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -477,6 +485,7 @@
                             <sort_order>32</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -489,6 +498,7 @@
                             <sort_order>33</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -500,6 +510,7 @@
                             <sort_order>34</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <hipercard_status>1</hipercard_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -537,6 +548,7 @@
                             <sort_order>42</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <diners_status>1</diners_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -549,6 +561,7 @@
                             <sort_order>43</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <diners_status>1</diners_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -560,6 +573,7 @@
                             <sort_order>44</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <diners_status>1</diners_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -597,6 +611,7 @@
                             <sort_order>52</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <amex_status>1</amex_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -609,6 +624,7 @@
                             <sort_order>53</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <amex_status>1</amex_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -620,6 +636,7 @@
                             <sort_order>54</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <amex_status>1</amex_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -657,6 +674,7 @@
                             <sort_order>62</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <elo_status>1</elo_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -669,6 +687,7 @@
                             <sort_order>63</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <elo_status>1</elo_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -680,6 +699,7 @@
                             <sort_order>64</sort_order>
                             <depends>
                                 <default_status>0</default_status>
+                                <elo_status>1</elo_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
