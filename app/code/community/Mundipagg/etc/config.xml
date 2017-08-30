@@ -26,10 +26,20 @@
     <default>
         <mundipagg>
             <general_group>
-                <moduleStatus>1</moduleStatus>
+                <module_status>1</module_status>
                 <logs>1</logs>
-                <testMode>1</testMode>
+                <test_mode>1</test_mode>
             </general_group>
+            <boleto_group>
+               <boleto_status>0</boleto_status> 
+               <boleto_payment_title>Boleto</boleto_payment_title>
+               <boleto_due_at>3</boleto_due_at>
+            </boleto_group>
+            <creditcard_group>
+                <cards_config_status>0</cards_config_status>
+                <creditcard_payment_title>Credit card</creditcard_payment_title>
+                <operation_type>AuthAndCapture</operation_type>
+            </creditcard_group>
         </mundipagg>
     </default>
 </config>
