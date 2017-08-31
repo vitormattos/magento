@@ -1,8 +1,10 @@
 <?php
 
-class Mundipagg_Model_CreditCardOperationType {
+class Mundipagg_Model_CreditCardOperationType
+{
 
-    public function toOptionArray() {
+    public function toOptionArray() 
+    {
         return
             [
                 'AuthAndCapture' => 'Auth and capture',

@@ -1,8 +1,10 @@
 <?php
 
-class Mundipagg_Model_MaxInstallmentsNumber {
+class Mundipagg_Model_MaxInstallmentsNumber
+{
 
-    public function toOptionArray() {
+    public function toOptionArray() 
+    {
         return
             [
                 '1' => '1x',
