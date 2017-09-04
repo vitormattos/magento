@@ -37,7 +37,7 @@
             </groups>
         </payment>
         <mundipagg translate="label" module="mundipagg">
-            <label><![CDATA[<div style="position: absolute;"><img id="magepal_block" border="0" width="16" /> &nbsp;Mundipagg</div>&nbsp;<script>$("magepal_block").src = "https://dashboard.mundipagg.com/images/logo-mundipagg-versao-reduzida.png";</script>]]></label>
+            <label><![CDATA[<div style="position: absolute;"><img id="magepal_block" alt="" border="0" width="16" /> &nbsp;Mundipagg</div>&nbsp;<script>$("magepal_block").src = "https://dashboard.mundipagg.com/images/logo-mundipagg-versao-reduzida.png";</script>]]></label>
             <tab>mundipagg</tab>
             <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
@@ -137,7 +137,7 @@
                 </general_group>
                 
                 <boleto_group translate="label" module="mundipagg">
-                    <label><![CDATA[<img title="Creditcard" alt="Creditcard" width="32" style="margin-top:5px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/boleto.jpg"/> <div style="margin:-29px 0 13px 40px"> Boleto configuration</div>]]></label>
+                    <label><![CDATA[<img title="Boleto" alt="Boleto" width="32" style="margin-top:9px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/boleto.png"/> <div style="margin:-29px 0 13px 40px"> Boleto configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1000</sort_order>
                     <show_in_default>1</show_in_default>
@@ -221,7 +221,7 @@
                     </fields>
                 </boleto_group>
                 <creditcard_group translate="label" module="mundipagg">
-                    <label><![CDATA[<img title="Creditcard" alt="Creditcard" width="32" style="margin-top:5px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/creditcard.jpg"/> <div style="margin:-29px 0 13px 40px"> General credit card configuration</div>]]></label>
+                    <label><![CDATA[<img title="Creditcard" alt="Creditcard" width="32" style="margin-top:9px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/creditcard.png"/> <div style="margin:-29px 0 13px 40px"> General credit card configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1100</sort_order>
                     <show_in_default>1</show_in_default>
@@ -286,7 +286,7 @@
                 
                 <!-- INSTALLMENTS -->
                 <installments_group translate="label" module="mundipagg">
-                    <label><![CDATA[<div style="font-size:19px; margin:11px 0 0 5px">%</div><div style="margin: -18px 0 11px 35px;">Installments configuration</div>]]></label>
+                    <label><![CDATA[<img title="Installments" alt="Installments" width="37" style="margin: 9px 0 0 0px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/installments.png"/><div style="margin: -26px 0 11px 45px;">Installments configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1200</sort_order>
                     <show_in_default>1</show_in_default>
@@ -296,7 +296,7 @@
                     <fields>
                         <!-- DEFAULT -->
                         <default_brand_header translate="label">
-                            <label>Default configuration - Applicable to all brands</label>
+                            <label><![CDATA[Default configuration - Applicable to all brands]]></label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
                             <sort_order>0</sort_order>
                             <show_in_default>1</show_in_default>
