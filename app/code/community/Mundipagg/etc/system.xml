@@ -37,7 +37,7 @@
             </groups>
         </payment>
         <mundipagg translate="label" module="mundipagg">
-            <label><![CDATA[<div style="position: absolute;"><img id="magepal_block" src="" border="0" width="16" /> &nbsp;Mundipagg</div>&nbsp;<script>$("magepal_block").src = "https://dashboard.mundipagg.com/images/logo-mundipagg-versao-reduzida.png";</script>]]></label>
+            <label><![CDATA[<div style="position: absolute;"><img id="magepal_block" border="0" width="16" /> &nbsp;Mundipagg</div>&nbsp;<script>$("magepal_block").src = "https://dashboard.mundipagg.com/images/logo-mundipagg-versao-reduzida.png";</script>]]></label>
             <tab>mundipagg</tab>
             <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
@@ -258,7 +258,7 @@
                             <show_in_store>1</show_in_store>                
                         </creditcard_payment_title>
                         <invoice_name translate="label">
-                            <label>Invoice"s name</label>
+                            <label>Invoice's name</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
                             <depends>
