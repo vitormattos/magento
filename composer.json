@@ -1,11 +1,30 @@
 {
-    "name": "mundipagg/magento",
-    "type": "project",
-    "require-dev" : {
-        "squizlabs/php_codesniffer" : "^3.0",
-        "phpunit/phpunit" : "^6.2"
-    },
-    "autoload": {
-        "psr-0": {"Mundipagg\\": "app/"}
+  "name": "mundipagg/magento",
+  "type": "project",
+
+  "require-dev" : {
+    "squizlabs/php_codesniffer" : "^3.0",
+    "phpunit/phpunit" : "^6.2"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Mundipagg\\": "app/"
     }
+  },
+
+  "config": {
+    "vendor-dir": "lib/"
+  },
+
+  "require": {
+    "apimatic/mundiapi": "dev-master"
+  },
+
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/mundipagg/mundiapi-php"
+    }
+  ]
 }
