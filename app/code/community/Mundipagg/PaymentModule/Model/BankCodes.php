@@ -1,11 +1,9 @@
 <?php
 
-class Mundipagg_Model_BankCodes
+class Mundipagg_PaymentModule_Model_BankCodes
 {
-
     public function toOptionArray() 
     {
-        
         $url = "http://embeddables.eastus2.cloudapp.azure.com/payment/bank_info.json";
         $banks = json_decode(file_get_contents($url), true);
         $combo[0] = "Select";

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mundipagg_PaymentModule>
+            <active>true</active>
+            <codePool>community</codePool>
+
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Mundipagg_PaymentModule>
+    </modules>
+</config>

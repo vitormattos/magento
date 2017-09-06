@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <tabs>
-        <mundipagg translate="label" module="mundipagg">
+        <paymentmodule translate="label" module="paymentmodule">
             <label>Mundipagg</label>
             <sort_order>100</sort_order>
-        </mundipagg>
+        </paymentmodule>
     </tabs>
     <sections>
-        <payment>
+        <payment translate="label" module="paymentmodule">
             <groups>
-                <mundipagg translate="label" module="mundipagg">
+                <paymentmodule  type="group" translate="label">
                     <label>Mundipagg - Payment methods</label>
                     <sort_order>1000</sort_order>
                     <show_in_default>1</show_in_default>
@@ -30,22 +30,20 @@
                             <br>
                             <h3><a href="index.php/admin/system_config/edit/section/mundipagg/">Mundipagg module configuration page</a></h3>
                         ]]>
-                        
                     </comment>
-                    
-                </mundipagg>
+                </paymentmodule>
             </groups>
         </payment>
-        <mundipagg translate="label" module="mundipagg">
+
+        <paymentmodule translate="label" module="paymentmodule">
             <label><![CDATA[<div style="position: absolute;"><img id="magepal_block" alt="" border="0" width="16" /> &nbsp;Mundipagg</div>&nbsp;<script>$("magepal_block").src = "https://dashboard.mundipagg.com/images/logo-mundipagg-versao-reduzida.png";</script>]]></label>
             <tab>mundipagg</tab>
             <sort_order>1000</sort_order>
             <show_in_default>1</show_in_default>
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
-            
             <groups>
-                <general_group translate="label" module="mundipagg">
+                <general_group translate="label" module="paymentmodule">
                     <label><![CDATA[<img title="Mundipagg" alt="Mundipagg" width="32" style="margin:10px 0px 0px 0px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/mundipagg-branco.png"/> <div style="margin: -23px 0 13px 40px;"> General configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1000</sort_order>
@@ -64,7 +62,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </heading_basic_config>
-                        
                         <module_status translate="label">
                             <label>Enabled</label>
                             <frontend_type>select</frontend_type>
@@ -83,7 +80,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </logs>
-                        
                         <api_data translate="label">
                             <label>Api data</label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
@@ -98,7 +94,7 @@
                             <sort_order>101</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </sk_prod>
                         <sk_test translate="label">
                             <label>Secret key [test]</label>
@@ -106,7 +102,7 @@
                             <sort_order>102</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </sk_test>
                         <pk_prod translate="label">
                             <label>Public key [production]</label>
@@ -114,7 +110,7 @@
                             <sort_order>103</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </pk_prod>
                         <pk_test translate="label">
                             <label>Public key [test]</label>
@@ -122,7 +118,7 @@
                             <sort_order>104</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </pk_test>
                         <test_mode translate="label">
                             <label>Test mode</label>
@@ -135,15 +131,13 @@
                         </test_mode>
                     </fields>
                 </general_group>
-                
-                <boleto_group translate="label" module="mundipagg">
+                <boleto_group translate="label" module="paymentmodule">
                     <label><![CDATA[<img title="Boleto" alt="Boleto" width="32" style="margin-top:9px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/boleto.png"/> <div style="margin:-29px 0 13px 40px"> Boleto configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1000</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
- 
                     <fields>
                         <manage_cards translate="label">
                             <label>Boleto configuration</label>
@@ -171,7 +165,7 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </boleto_payment_title>
                         <boleto_name translate="label">
                             <label>Name</label>
@@ -182,19 +176,19 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </boleto_name>
                         <boleto_bank translate="label">
                             <label>Select bank</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_BankCodes</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_BankCodes</source_model>
                             <sort_order>1</sort_order>
                             <depends>
                                 <boleto_status>1</boleto_status>
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </boleto_bank>
                         <boleto_due_at translate="label">
                             <label>Due at</label>
@@ -205,7 +199,7 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </boleto_due_at>
                         <boleto_instructions translate="label">
                             <label>Instructions</label>
@@ -216,18 +210,17 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </boleto_instructions>
                     </fields>
                 </boleto_group>
-                <creditcard_group translate="label" module="mundipagg">
+                <creditcard_group translate="label" module="paymentmodule">
                     <label><![CDATA[<img title="Creditcard" alt="Creditcard" width="32" style="margin-top:9px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/creditcard.png"/> <div style="margin:-29px 0 13px 40px"> General credit card configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1100</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    
                     <fields>
                         <cards_config translate="label">
                             <label>General credit card configuration</label>
@@ -255,7 +248,7 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </creditcard_payment_title>
                         <invoice_name translate="label">
                             <label>Invoice's name</label>
@@ -266,7 +259,7 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </invoice_name>
                         <operation_type translate="label">
                             <label>Operation type</label>
@@ -279,20 +272,18 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </operation_type>
                     </fields>
                 </creditcard_group>
-                
                 <!-- INSTALLMENTS -->
-                <installments_group translate="label" module="mundipagg">
+                <installments_group translate="label" module="paymentmodule">
                     <label><![CDATA[<img title="Installments" alt="Installments" width="37" style="margin: 9px 0 0 0px;" src="/skin/adminhtml/default/default/images/mundipagg/icons/installments.png"/><div style="margin: -26px 0 11px 45px;">Installments configuration</div>]]></label>
                     <frontend_type>text</frontend_type>
                     <sort_order>1200</sort_order>
                     <show_in_default>1</show_in_default>
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
-                    
                     <fields>
                         <!-- DEFAULT -->
                         <default_brand_header translate="label">
@@ -316,7 +307,7 @@
                         <default_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>2</sort_order>
                             <depends>
                                 <default_status>1</default_status>
@@ -328,7 +319,7 @@
                         <default_max_without_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>3</sort_order>
                             <depends>
                                 <default_status>1</default_status>
@@ -346,7 +337,7 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </default_interest>
                         <default_incremental_interest translate="label">
                             <label><![CDATA[Incremental interest(%)]]></label>
@@ -357,9 +348,8 @@
                             </depends>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>                
+                            <show_in_store>1</show_in_store>
                         </default_incremental_interest>
-                        
                         <!-- VISA -->
                         <visa_configuration translate="label">
                             <label><![CDATA[<img title="Visa" alt="Visa" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/visa.jpg"/> <div style="margin:-29px 0 13px 40px"> Visa configuration</div>]]></label>
@@ -387,7 +377,7 @@
                         <visa_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>8</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -400,7 +390,7 @@
                         <visa_max_no_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>8</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -422,7 +412,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </visa_incremental_interest>
-                        
                         <!-- MASTERCARD -->
                         <mastercard_configuration translate="label">
                             <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/mastercard.jpg"/> <div style="margin:-29px 0 13px 40px"> Mastercard configuration</div>]]></label>
@@ -450,7 +439,7 @@
                         <mastercard_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>22</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -463,7 +452,7 @@
                         <mastercard_max_no_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>23</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -485,7 +474,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </mastercard_incremental_interest>
-                        
                         <!-- HIPERCARD -->
                         <hipercard_configuration translate="label">
                             <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/hipercard.jpg"/> <div style="margin:-29px 0 13px 40px"> Mastercard configuration</div>]]></label>
@@ -513,7 +501,7 @@
                         <hipercard_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>32</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -526,7 +514,7 @@
                         <hipercard_max_no_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>33</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -548,7 +536,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </hipercard_incremental_interest>
-                        
                         <!-- DINERS-->
                         <diners_configuration translate="label">
                             <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/diners.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
@@ -576,7 +563,7 @@
                         <diners_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>42</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -589,7 +576,7 @@
                         <diners_max_no_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>43</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -611,7 +598,6 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </diners_incremental_interest>
-                        
                         <!-- AMEX -->
                         <amex_configuration translate="label">
                             <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/amex.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
@@ -639,7 +625,7 @@
                         <amex_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>52</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -652,7 +638,7 @@
                         <amex_max_no_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>53</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -674,7 +660,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </amex_incremental_interest>
-                        
+
                         <!-- ELO -->
                         <elo_configuration translate="label">
                             <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/elo.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
@@ -702,7 +688,7 @@
                         <elo_max_installments translate="label">
                             <label>Max installments number</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>62</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -715,7 +701,7 @@
                         <elo_max_no_interest translate="label">
                             <label>Max installments without interest</label>
                             <frontend_type>select</frontend_type>
-                            <source_model>Mundipagg_Model_MaxInstallmentsNumber</source_model>
+                            <source_model>Mundipagg_PaymentModule_Model_MaxInstallmentsNumber</source_model>
                             <sort_order>63</sort_order>
                             <depends>
                                 <default_status>0</default_status>
@@ -740,6 +726,6 @@
                     </fields>
                 </installments_group>
             </groups>
-        </mundipagg>
+        </paymentmodule>
     </sections>
 </config>

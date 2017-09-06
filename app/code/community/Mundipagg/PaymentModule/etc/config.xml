@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mundipagg_PaymentModule>
+            <version>0.1.0</version>
+        </Mundipagg_PaymentModule>
+    </modules>
+    <global>
+        <models>
+            <paymentmodule>
+                <class>Mundipagg_PaymentModule_Model</class>
+            </paymentmodule>
+        </models>
+        
+        <!--helpers>
+            <paymentmodule>
+                <class>Mundipagg_PaymentModule_Helper</class>
+            </paymentmodule>
+        </helpers-->
+        
+        <!--blocks>
+            <paymentmodule>
+                <class>Mundipagg_PaymentModule_Block</class>
+            </paymentmodule>
+        </blocks-->
+    </global>
+
+    <!--frontend>
+        <routers>
+            <paymentmodule>
+                <use>standard</use>
+                <args>
+                    <module>Mundipagg_PaymentModule</module>
+                    <frontname>paymentmodule</frontname>
+                </args>
+            </paymentmodule>
+        </routers>
+    </frontend-->
+
+    <!--default>
+        <payment>
+            <general_group>
+                <model>paymentmodule/general</model>
+                <payment_action>order</payment_action>
+                <module_status>1</module_status>
+                <logs>1</logs>
+                <test_mode>1</test_mode>
+            </general_group>
+
+            <boleto_group>
+                <model>paymentmodule/boleto</model>
+                <active>0</active>
+                <title><![CDATA[Boleto]]></title>
+                <payment_action>authorize</payment_action>
+                <boleto_status>0</boleto_status>
+                <boleto_payment_title>Boleto</boleto_payment_title>
+                <boleto_due_at>3</boleto_due_at>
+            </boleto_group>
+
+            <creditcard_group>
+                <model>paymentmodule/creditcard</model>
+                <active>0</active>
+                <title><![CDATA[Cartão de Crédito]]></title>
+                <payment_action>authorize</payment_action>
+                <cards_config_status>0</cards_config_status>
+                <creditcard_payment_title>Credit card</creditcard_payment_title>
+                <operation_type>AuthAndCapture</operation_type>
+            </creditcard_group>
+        </payment>
+    </default-->
+</config>
