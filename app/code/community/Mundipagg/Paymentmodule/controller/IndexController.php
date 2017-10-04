@@ -1,5 +1,5 @@
 <?php
  
-class Mundipagg_IndexController extends Mage_Core_Controller_Front_Action
+class Mundipagg_Paymentmodule_IndexController extends Mage_Core_Controller_Front_Action
 {
 }

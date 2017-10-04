@@ -7,33 +7,33 @@
 
     <global>
         <models>
-            <mundipagg_paymentmodule>
+            <paymentmodule>
                 <class>Mundipagg_Paymentmodule_Model</class>
-                <resourceModel>paymentmodule_resource</resourceModel>
-            </mundipagg_paymentmodule>
+            </paymentmodule>
         </models>
-        
+
         <helpers>
-            <mundipagg_paymentmodule>
-                <class>Mundipagg_Helper</class>
-            </mundipagg_paymentmodule>
+            <paymentmodule>
+                <class>Mundipagg_Paymentmodule_Helper</class>
+            </paymentmodule>
         </helpers>
         
         <blocks>
-            <mundipagg_paymentmodule>
-                <class>Mundipagg_Block</class>
-            </mundipagg_paymentmodule>
+            <paymentmodule>
+                <class>Mundipagg_Paymentmodule_Block</class>
+            </paymentmodule>
         </blocks>
     </global>
+
     <default>
-        <mundipagg_paymentmodule>
+        <mundipagg_config>
             <general_group>
                 <module_status>1</module_status>
                 <logs>1</logs>
                 <test_mode>1</test_mode>
             </general_group>
             <boleto_group>
-               <boleto_status>0</boleto_status> 
+               <boleto_status>0</boleto_status>
                <boleto_payment_title>Boleto</boleto_payment_title>
                <boleto_due_at>3</boleto_due_at>
             </boleto_group>
@@ -42,6 +42,6 @@
                 <creditcard_payment_title>Credit card</creditcard_payment_title>
                 <operation_type>AuthAndCapture</operation_type>
             </creditcard_group>
-        </mundipagg_paymentmodule>
+        </mundipagg_config>
     </default>
 </config>
