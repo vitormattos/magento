@@ -1,6 +1,6 @@
 <?php
 
-class Mundipagg_Model_BankCodes
+class Mundipagg_Paymentmodule_Model_BankCodes
 {
 
     public function toOptionArray() 

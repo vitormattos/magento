@@ -1,8 +1,7 @@
 <?php
 
-class Mundipagg_Model_MaxInstallmentsNumber
+class Mundipagg_Paymentmodule_Model_MaxInstallmentsNumber
 {
-
     public function toOptionArray() 
     {
         return
