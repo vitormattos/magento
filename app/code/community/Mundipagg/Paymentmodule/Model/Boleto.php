@@ -1,9 +1,9 @@
 <?php
 
-class Mundipagg_Paymentmodule_Model_Creditcard extends Mundipagg_Paymentmodule_Model_Standard
+class Mundipagg_Paymentmodule_Model_Boleto extends Mundipagg_Paymentmodule_Model_Standard
 {
-    protected $_code = 'paymentmodule_creditcard';
-    protected $_formBlockType = 'paymentmodule/form_creditcard';
+    protected $_code = 'paymentmodule_boleto';
+    protected $_formBlockType = 'paymentmodule/form_boleto';
     protected $_isGateway = true;
     protected $_canOrder  = true;
     protected $_canAuthorize = true;
