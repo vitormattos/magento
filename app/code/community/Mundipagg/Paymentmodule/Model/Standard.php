@@ -14,4 +14,9 @@ class Mundipagg_Paymentmodule_Model_Standard extends Mage_Payment_Model_Method_A
         // @fixme _secure is set to false because we are in dev mode
         return Mage::getUrl('paymentmodule/standard/checkout', array('_secure' => false));
     }
+
+    public function capture(Varien_Object $payment, $amount)
+    {
+        return parent::capture($payment, $amount);
+    }
 }
