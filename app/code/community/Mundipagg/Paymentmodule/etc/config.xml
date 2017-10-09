@@ -9,7 +9,31 @@
         <models>
             <paymentmodule>
                 <class>Mundipagg_Paymentmodule_Model</class>
+                <resourceModel>paymentmodule_resource</resourceModel>
             </paymentmodule>
+
+            <paymentmodule_resource>
+                <class>Mundipagg_Paymentmodule_Model_Resource</class>
+                <entities>
+                    <customer>
+                        <table>mundipagg_paymentmodule_customer</table>
+                    </customer>
+
+                    <order>
+                        <table>mundipagg_paymentmodule_order</table>
+                    </order>
+
+                    <charge>
+                        <table>mundipagg_paymentmodule_charge</table>
+                    </charge>
+                </entities>
+            </paymentmodule_resource>
+
+            <sales>
+                <rewrite>
+                    <order_payment>Mundipagg_Paymentmodule_Model_Payment</order_payment>
+                </rewrite>
+            </sales>
         </models>
 
         <helpers>
@@ -23,7 +47,41 @@
                 <class>Mundipagg_Paymentmodule_Block</class>
             </paymentmodule>
         </blocks>
+
+        <fieldsets>
+            <sales_convert_quote_payment>
+                <check_no>
+                    <to_order_payment>*</to_order_payment>
+                </check_no>
+                <check_date>
+                    <to_order_payment>*</to_order_payment>
+                </check_date>
+            </sales_convert_quote_payment>
+        </fieldsets>
+
+        <events>
+            <mundipagg_payment_start>
+                <observers>
+                    <mundipagg_paymentmodule_payment_start_event_observer>
+                        <class>paymentmodule/observer</class>
+                        <method>requireDependencies</method>
+                    </mundipagg_paymentmodule_payment_start_event_observer>
+                </observers>
+            </mundipagg_payment_start>
+        </events>
     </global>
+
+    <frontend>
+        <routers>
+            <paymentmodule>
+                <use>standard</use>
+                <args>
+                    <module>Mundipagg_Paymentmodule</module>
+                    <frontName>mundipagg</frontName>
+                </args>
+            </paymentmodule>
+        </routers>
+    </frontend>
 
     <default>
         <mundipagg_config>
@@ -43,5 +101,23 @@
                 <operation_type>AuthAndCapture</operation_type>
             </creditcard_group>
         </mundipagg_config>
+
+        <payment>
+            <paymentmodule_creditcard>
+                <model>paymentmodule/creditcard</model>
+                <title>Mundipagg - credit card</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_creditcard>
+
+            <paymentmodule_boleto>
+                <model>paymentmodule/boleto</model>
+                <title>Mundipagg - boleto</title>
+                <allowspecific>0</allowspecific>
+                <active>1</active>
+                <payment_action>authorize</payment_action>
+            </paymentmodule_boleto>
+        </payment>
     </default>
 </config>
