@@ -12,22 +12,22 @@ class Mundipagg_Paymentmodule_Model_Config_General
         return Mage::getStoreConfig('mundipagg_config/general_group/logs') == 1;
     }
 
-    public function getProdSecretKey()
+    private function getProdSecretKey()
     {
         return Mage::getStoreConfig('mundipagg_config/general_group/sk_prod');
     }
 
-    public function getTestSecretKey()
+    private function getTestSecretKey()
     {
         return Mage::getStoreConfig('mundipagg_config/general_group/sk_test');
     }
 
-    public function getProdPublicKey()
+    private function getProdPublicKey()
     {
         return Mage::getStoreConfig('mundipagg_config/general_group/pk_prod');
     }
 
-    public function getTestPublicKey()
+    private function getTestPublicKey()
     {
         return Mage::getStoreConfig('mundipagg_config/general_group/pk_test');
     }
@@ -35,5 +35,23 @@ class Mundipagg_Paymentmodule_Model_Config_General
     public function isTestModeEnabled()
     {
         return Mage::getStoreConfig('mundipagg_config/general_group/test_mode') == 1;
+    }
+
+    public function getSecretKey()
+    {
+        if ($this->isTestModeEnabled()) {
+            return $this->getTestSecretKey();
+        }
+
+        return $this->getProdSecretKey();
+    }
+
+    public function getPublicKey()
+    {
+        if ($this->isTestModeEnabled()) {
+            return $this->getTestPublicKey();
+        }
+
+        return $this->getProdPublicKey();
     }
 }

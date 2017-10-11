@@ -1,35 +1,26 @@
 <?php
 
-require_once Mage::getBaseDir('lib') . '/autoload.php';
-
-use MundiAPILib\MundiAPIClient;
-
 class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Front_Action
 {
     public function processPaymentAction()
     {
-        $boletoConfig = Mage::getModel('paymentmodule/config_boleto');
-        echo $boletoConfig->isEnabled();
+        $order = Mage::getModel('paymentmodule/api_order');
 
+        $paymentInfo = new Varien_Object();
 
-//        $paymentInfo = new Varien_Object();
-//
-//        $paymentInfo->setItemsInfo($this->getItemsInformation());
+        $paymentInfo->setItemsInfo($this->getItemsInformation());
 //        $paymentInfo->setCustomerInfo($this->getCustomerInformation());
 //        $paymentInfo->setPaymentInfo($this->getPaymentInformation());
-//
-//        $order = Mage::getModel('paymentmodule/order');
+//        $paymentInfo->setMetaInfo(Mage::helper('paymentmodule/data')->getMetaData());
+
+        $result = $order->createBoletoPayment($paymentInfo);
     }
 
     private function getItemsInformation()
     {
-        $session = Mage::getSingleton('checkout/session');
-        $order = Mage::getModel('sales/order');
 
-        $orderId = $session->getLastOrderId();
-        $orderData = $order->load($orderId);
 
-        return $orderData->getItemsCollection();
+
     }
 
     private function getCustomerInformation()
