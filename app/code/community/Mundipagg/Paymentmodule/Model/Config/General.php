@@ -54,4 +54,9 @@ class Mundipagg_Paymentmodule_Model_Config_General
 
         return $this->getProdPublicKey();
     }
+
+    public function getPassword()
+    {
+        return '';
+    }
 }

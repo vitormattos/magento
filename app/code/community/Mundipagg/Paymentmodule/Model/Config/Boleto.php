@@ -22,9 +22,17 @@ class Mundipagg_Paymentmodule_Model_Config_Boleto
         return Mage::getStoreConfig('mundipagg_config/boleto_group/boleto_bank');
     }
 
+    /**
+     * This method returns a string date formatted according to iso-8601
+     *
+     * @return string
+     */
     public function getDueAt()
     {
-        return Mage::getStoreConfig('mundipagg_config/boleto_group/boleto_due_at');
+        $term = Mage::getStoreConfig('mundipagg_config/boleto_group/boleto_due_at');
+        $formattedDate = new DateTime(date('Y-m-d', strtotime('+' . $term . ' days')));
+
+        return $formattedDate->format('c');
     }
 
     public function getInstructions()
