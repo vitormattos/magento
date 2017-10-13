@@ -2,6 +2,10 @@
 
 class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * Gather boleto transaction information and try to create
+     * payment using sdk api wrapper.
+     */
     public function processPaymentAction()
     {
         $order = Mage::getModel('paymentmodule/api_order');
@@ -13,6 +17,7 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
         $paymentInfo->setPaymentInfo($this->getPaymentInformation());
         $paymentInfo->setMetaInfo(Mage::helper('paymentmodule/data')->getMetaData());
 
+        $c = 3;
         try {
             $result = $order->createBoletoPayment($paymentInfo);
             $this->handleSuccessBoletoTransaction($result);
@@ -22,9 +27,15 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
         }
     }
 
+    /**
+     * Take the result from processPaymentTransaction and redirect customer to
+     * success page
+     *
+     * @param $resultTransaction
+     */
     private function handleSuccessBoletoTransaction($resultTransaction)
     {
-
+        $this->_redirect('checkout/onepage/success', array('_secure'=>true));
     }
 
     /**
@@ -43,8 +54,8 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
             $items[] = array(
                 // @fixme don't forget multiply by 100 to get amount in cents
                 // https://stackoverflow.com/questions/31178749/how-to-transform-the-magento-order-price-in-cents
-                'amount' => $item->getPrice(),
-                'quantity' => $item->getQtyOrdered()
+                'amount' => round($item->getPrice() * 100),
+                'quantity' => (int) $item->getQtyOrdered()
             );
         }
 
@@ -52,7 +63,9 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
     }
 
     /**
-     * @return mixed
+     * Gather information about customer
+     *
+     * @return Varien_Object
      */
     private function getCustomerInformation()
     {
@@ -75,6 +88,11 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
         return $information;
     }
 
+    /**
+     * Gather information about customer's address
+     *
+     * @return Varien_Object
+     */
     private function getCustomerAddressInformation()
     {
         $orderId = Mage::getSingleton('checkout/session')->getLastOrderId();
@@ -84,10 +102,11 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
 
         $address = new Varien_Object();
 
-        $address->setStreet($billingAddress->getStreet());
+        // @fixme I'm using this getStreet()[0] here but maybe there's a better way...
+        $address->setStreet($billingAddress->getStreet()[0]);
         $address->setNumber('number');
         $address->setZipCode($billingAddress->getPostcode());
-        $address->setNeighborhood('bairro');
+        $address->setNeighborhood('neighborhood');
         $address->setCity($billingAddress->getCity());
         $address->setState($billingAddress->getRegion());
         $address->setCountry($billingAddress->getCountryId());
@@ -97,6 +116,11 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
         return $address;
     }
 
+    /**
+     * Gather information about customer's phones
+     *
+     * @return Varien_Object
+     */
     private function getCustomerPhonesInformation()
     {
         $phones = new Varien_Object();
@@ -108,18 +132,23 @@ class Mundipagg_Paymentmodule_BoletoController extends Mage_Core_Controller_Fron
         return $phones;
     }
 
+    /**
+     * Gather information about payment
+     *
+     * @return Varien_Object
+     */
     private function getPaymentInformation()
     {
         $boletoConfig = Mage::getModel('paymentmodule/config_boleto');
 
+        $orderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+        $order = Mage::getModel("sales/order")->load($orderId);
+        $grandTotal = $order->getGrandTotal();
+
         $payment = new Varien_Object();
 
         $payment->setPaymentMethod('boleto');
-        $payment->setAmount(
-            $grandTotal = Mage::getModel('checkout/session')
-                ->getQuote()
-                ->getGrandTotal()
-        );
+        $payment->setAmount($grandTotal);
         $payment->setBank($boletoConfig->getBank());
         $payment->setInstructions($boletoConfig->getInstructions());
         $payment->setDueAt($boletoConfig->getDueAt());

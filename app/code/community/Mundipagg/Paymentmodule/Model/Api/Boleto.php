@@ -9,6 +9,7 @@ use MundiAPILib\Models\CreatePhonesRequest;
 use MundiAPILib\Models\CreatePhoneRequest;
 use MundiAPILib\Models\CreatePaymentRequest;
 use MundiAPILib\Models\CreateBoletoPaymentRequest;
+use MundiAPILib\Models\CreateOrderItemRequest;
 
 class Mundipagg_Paymentmodule_Model_Api_Boleto
 {
@@ -16,13 +17,30 @@ class Mundipagg_Paymentmodule_Model_Api_Boleto
     {
         $orderRequest = new CreateOrderRequest();
 
-        $orderRequest->items = $paymentInformation->getItemsInfo();
+        $orderRequest->items = $this->getItems($paymentInformation->getItemsInfo());
         $orderRequest->customer = $this->getCustomerRequest($paymentInformation->getCustomerInfo());
         $orderRequest->payments = $this->getPayments($paymentInformation->getPaymentInfo());
         $orderRequest->code = 'xxx';
         $orderRequest->metadata = $paymentInformation->getMetainfo();
 
         return $orderRequest;
+    }
+
+    private function getItems($itemsInfo)
+    {
+        $items = array();
+
+        foreach ($itemsInfo as $item) {
+            $orderItem = new CreateOrderItemRequest();
+
+            $orderItem->amount = $item->getAmount();
+            $orderItem->quantity = $item->getQuantity();
+            $orderItem->description = $item->getDescription();
+
+            $items[] = $item;
+        }
+
+        return $items;
     }
 
     private function getCustomerRequest($customerInfo)
@@ -41,17 +59,17 @@ class Mundipagg_Paymentmodule_Model_Api_Boleto
 
     private function getCreateAddressRequest($addressInfo)
     {
-        return new CreateAddressRequest(
-            $addressInfo->getStreet(),
-            $addressInfo->getNumber(),
-            $addressInfo->getZipCode(),
-            $addressInfo->getNeighborhood(),
-            $addressInfo->getCity(),
-            $addressInfo->getState(),
-            $addressInfo->getCountry(),
-            $addressInfo->getComplement(),
-            $addressInfo->getMetadata()
-        );
+        $addressRequest = new CreateAddressRequest();
+
+        $addressRequest->street = $addressInfo->getStreet();
+        $addressRequest->number = $addressInfo->getNumber();
+        $addressRequest->zipCode = $addressInfo->getZipCode();
+        $addressRequest->neighborhood = $addressInfo->getNeighborhood();
+        $addressRequest->city = $addressInfo->getCity();
+        $addressRequest->state = $addressInfo->getState();
+        $addressRequest->country = $addressInfo->getCountry();
+
+        return $addressRequest;
     }
 
     private function getCreatePhonesRequest($phonesInfo)
@@ -94,6 +112,6 @@ class Mundipagg_Paymentmodule_Model_Api_Boleto
         // @todo this should not be hard coded
         $paymentRequest->currency = 'BRL';
 
-        return array($boletoPayment);
+        return array($paymentRequest);
     }
 }
