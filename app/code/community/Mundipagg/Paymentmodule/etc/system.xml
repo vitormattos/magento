@@ -490,7 +490,7 @@
 
                         <!-- HIPERCARD -->
                         <hipercard_configuration translate="label">
-                            <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/hipercard.jpg"/> <div style="margin:-29px 0 13px 40px"> Mastercard configuration</div>]]></label>
+                            <label><![CDATA[<img title="Hipercard" alt="Hipercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/hipercard.jpg"/> <div style="margin:-29px 0 13px 40px"> Hipercard configuration</div>]]></label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
                             <sort_order>30</sort_order>
                             <depends>
@@ -553,7 +553,7 @@
 
                         <!-- DINERS-->
                         <diners_configuration translate="label">
-                            <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/diners.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
+                            <label><![CDATA[<img title="Diners" alt="Diners" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/diners.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
                             <sort_order>40</sort_order>
                             <depends>
@@ -616,7 +616,7 @@
 
                         <!-- AMEX -->
                         <amex_configuration translate="label">
-                            <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/amex.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
+                            <label><![CDATA[<img title="Amex" alt="Amex" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/amex.jpg"/> <div style="margin:-29px 0 13px 40px">Amex configuration</div>]]></label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
                             <sort_order>50</sort_order>
                             <depends>
@@ -679,7 +679,7 @@
 
                         <!-- ELO -->
                         <elo_configuration translate="label">
-                            <label><![CDATA[<img title="Mastercard" alt="Mastercard" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/elo.jpg"/> <div style="margin:-29px 0 13px 40px"> Diners configuration</div>]]></label>
+                            <label><![CDATA[<img title="Elo" alt="Elo" width="32" src="/skin/adminhtml/default/default/images/mundipagg/icons/elo.jpg"/> <div style="margin:-29px 0 13px 40px">Elo configuration</div>]]></label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
                             <sort_order>60</sort_order>
                             <depends>

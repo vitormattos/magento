@@ -11,12 +11,23 @@ class Mundipagg_Paymentmodule_Model_Standard extends Mage_Payment_Model_Method_A
      */
     public function getOrderPlaceRedirectUrl()
     {
-        // @fixme _secure is set to false because we are in dev mode
-        return Mage::getUrl('paymentmodule/standard/checkout', array('_secure' => false));
-    }
+        $controller = '';
 
-    public function capture(Varien_Object $payment, $amount)
-    {
-        return parent::capture($payment, $amount);
+        switch ($this->getCode()) {
+            case 'paymentmodule_boleto':
+                $controller = 'boleto';
+                break;
+            case 'paymentmodule_creditcard':
+                $controller = 'creditcard';
+                break;
+            default:
+                // @todo log error and redirect user to failure page
+        }
+
+        // @fixme _secure is set to false because we are in dev mode
+        return Mage::getUrl(
+            'paymentmodule/' . $controller . '/processpayment',
+            array('_secure' => false)
+        );
     }
 }
