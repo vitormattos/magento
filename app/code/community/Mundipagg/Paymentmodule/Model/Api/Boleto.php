@@ -31,13 +31,12 @@ class Mundipagg_Paymentmodule_Model_Api_Boleto
         $items = array();
 
         foreach ($itemsInfo as $item) {
-            $orderItem = new CreateOrderItemRequest();
+            $orderItemRequest = new CreateOrderItemRequest();
+            $orderItemRequest->amount = $item->getAmount();
+            $orderItemRequest->quantity = $item->getQuantity();
+            $orderItemRequest->description = $item->getDescription();
 
-            $orderItem->amount = $item->getAmount();
-            $orderItem->quantity = $item->getQuantity();
-            $orderItem->description = $item->getDescription();
-
-            $items[] = $item;
+            $items[] = $orderItemRequest;
         }
 
         return $items;
@@ -45,16 +44,16 @@ class Mundipagg_Paymentmodule_Model_Api_Boleto
 
     private function getCustomerRequest($customerInfo)
     {
-        return new CreateCustomerRequest(
-            $customerInfo->getName(),
-            $customerInfo->getEmail(),
-            $customerInfo->getDocument(),
-            $customerInfo->getType(),
-            $this->getCreateAddressRequest($customerInfo->getAddress()),
-            $customerInfo->getMetadata(),
-            $this->getCreatePhonesRequest($customerInfo->getPhones()),
-            $customerInfo->getCode()
-        );
+        $customerRequest = new CreateCustomerRequest();
+
+        $customerRequest->name = $customerInfo->getName();
+        $customerRequest->email = $customerInfo->getEmail();
+        $customerRequest->document = $customerInfo->getDocument();
+        $customerRequest->type = $customerInfo->getType();
+        $customerRequest->address = $this->getCreateAddressRequest($customerInfo->getAddress());
+        $customerRequest->phones = $this->getCreatePhonesRequest($customerInfo->getPhones());
+
+        return $customerRequest;
     }
 
     private function getCreateAddressRequest($addressInfo)

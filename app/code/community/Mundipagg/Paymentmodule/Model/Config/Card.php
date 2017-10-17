@@ -53,7 +53,7 @@ class Mundipagg_Paymentmodule_Model_Config_Card
         return Mage::getStoreConfig('mundipagg_config/installments_group/visa_status');
     }
 
-    public function getVisaMaxInstallmentsWithoutInterst()
+    public function getVisaMaxInstallmentsWithoutInterest()
     {
         return Mage::getStoreConfig('mundipagg_config/installments_group/visa_max_no_interest');
     }
@@ -73,7 +73,7 @@ class Mundipagg_Paymentmodule_Model_Config_Card
         return Mage::getStoreConfig('mundipagg_config/installments_group/mastercard_status');
     }
 
-    public function getMasterMaxInstallmentsWithoutInterst()
+    public function getMasterMaxInstallmentsWithoutInterest()
     {
         return Mage::getStoreConfig('mundipagg_config/installments_group/mastercard_max_no_interest');
     }
@@ -93,7 +93,7 @@ class Mundipagg_Paymentmodule_Model_Config_Card
         return Mage::getStoreConfig('mundipagg_config/installments_group/hipercard_status');
     }
 
-    public function getHiperMaxInstallmentsWithoutInterst()
+    public function getHiperMaxInstallmentsWithoutInterest()
     {
         return Mage::getStoreConfig('mundipagg_config/installments_group/hipercard_max_no_interest');
     }
@@ -113,7 +113,7 @@ class Mundipagg_Paymentmodule_Model_Config_Card
         return Mage::getStoreConfig('mundipagg_config/installments_group/diners_status');
     }
 
-    public function getDinersMaxInstallmentsWithoutInterst()
+    public function getDinersMaxInstallmentsWithoutInterest()
     {
         return Mage::getStoreConfig('mundipagg_config/installments_group/diners_max_no_interest');
     }
@@ -133,7 +133,7 @@ class Mundipagg_Paymentmodule_Model_Config_Card
         return Mage::getStoreConfig('mundipagg_config/installments_group/amex_status');
     }
 
-    public function getAmexMaxInstallmentsWithoutInterst()
+    public function getAmexMaxInstallmentsWithoutInterest()
     {
         return Mage::getStoreConfig('mundipagg_config/installments_group/amex_max_no_interest');
     }
@@ -153,7 +153,7 @@ class Mundipagg_Paymentmodule_Model_Config_Card
         return Mage::getStoreConfig('mundipagg_config/installments_group/elo_status');
     }
 
-    public function getEloMaxInstallmentsWithoutInterst()
+    public function getEloMaxInstallmentsWithoutInterest()
     {
         return Mage::getStoreConfig('mundipagg_config/installments_group/elo_max_no_interest');
     }

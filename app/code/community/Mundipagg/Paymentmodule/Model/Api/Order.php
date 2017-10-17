@@ -14,21 +14,19 @@ class Mundipagg_Paymentmodule_Model_Api_Order
     public function createBoletoPayment(Varien_Object $paymentInformation)
     {
         $boleto = Mage::getModel('paymentmodule/api_boleto');
+        $orderRequest = $boleto->getCreateOrderRequest($paymentInformation);
 
         $orderController = $this->getOrderController();
-        return $orderController->createOrder(
-            $boleto->getCreateOrderRequest($paymentInformation)
-        );
+        return $orderController->createOrder($orderRequest);
     }
 
     public function createCreditCardPayment(Varien_Object $paymentInformation)
     {
-        $boleto = Mage::getModel('paymentmodule/api_creditcard');
+        $creditCard = Mage::getModel('paymentmodule/api_creditcard');
+        $orderRequest = $creditCard->getCreateOrderRequest($paymentInformation);
 
         $orderController = $this->getOrderController();
-        return $orderController->createOrder(
-            $boleto->getCreateOrderRequest($paymentInformation)
-        );
+        return $orderController->createOrder($orderRequest);
     }
 
     private function getOrderController()
