@@ -1,5 +1,6 @@
 # Mundipagg/Magento Integration module
-This is the official Opencart module for Mundipagg integration
+
+This is the official Magento module for new Mundipagg API integration
 
 # Documentation
 Refer to [module documentation](https://github.com/mundipagg/magento/wiki)
@@ -25,6 +26,11 @@ modman clone https://github.com/mundipagg/magento
 
 ## Magento Marketplace
 
+Coming soon
+
+## API Reference
+
+http://docs-legacy.mundipagg.com
 
 # How can I contribute?
 Please, refer to [CONTRIBUTING](CONTRIBUTING.md)
@@ -33,5 +39,4 @@ Please, refer to [CONTRIBUTING](CONTRIBUTING.md)
 Open a new Issue following our issue template [ISSUE-TEMPLATE](ISSUE-TEMPLATE.md)
 
 # Changelog
-See our [CHANGELOG](CHANGELOG.md)
-
+See in [releases](https://github.com/mundipagg/magento/releases)
