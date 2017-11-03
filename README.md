@@ -30,7 +30,7 @@ Coming soon
 
 ## API Reference
 
-http://docs-legacy.mundipagg.com
+http://docs.mundipagg.com
 
 # How can I contribute?
 Please, refer to [CONTRIBUTING](CONTRIBUTING.md)
