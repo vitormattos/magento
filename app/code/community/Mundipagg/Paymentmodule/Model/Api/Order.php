@@ -17,7 +17,14 @@ class Mundipagg_Paymentmodule_Model_Api_Order
         $orderRequest = $boleto->getCreateOrderRequest($paymentInformation);
 
         $orderController = $this->getOrderController();
-        return $orderController->createOrder($orderRequest);
+        try {
+            return $orderController->createOrder($orderRequest);
+        } catch (\MundiAPILib\Exceptions\ErrorException $e) {
+            Mage::log(
+                $e->getMessage()."\n".$e->getContext()->getResponse()->getRawBody(),
+                Zend_log::EMERG
+            );
+        }
     }
 
     public function createCreditCardPayment(Varien_Object $paymentInformation)
